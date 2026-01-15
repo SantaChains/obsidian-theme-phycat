@@ -611,7 +611,7 @@ body.theme-dark {
 }
 
 .markdown-preview-view .heading-collapse-indicator {
-  margin-inline-start: -32px !important
+  margin-inline-start: -47px !important
 }
 
 .markdown-preview-view h2 .heading-collapse-indicator {
@@ -1829,8 +1829,9 @@ body.theme-dark .markdown-preview-view a.external-link:hover::before {
   display: none !important
 }
 
-.markdown-preview-view mark {
-  background-color: transparent;
+.markdown-preview-view mark,
+.markdown-source-view.mod-cm6 .cm-mark {
+  background-color: transparent !important;
   font-weight: bold;
   padding: 0 2px;
   margin: 0 3px;
@@ -1838,11 +1839,14 @@ body.theme-dark .markdown-preview-view a.external-link:hover::before {
   position: relative;
   transition: color 0.3s ease, background-color 0.3s ease;
   -webkit-box-decoration-break: clone;
-  box-decoration-break: clone
+  box-decoration-break: clone;
+  color: inherit
 }
 
 .markdown-preview-view mark::before,
-.markdown-preview-view mark::after {
+.markdown-preview-view mark::after,
+.markdown-source-view.mod-cm6 .cm-mark::before,
+.markdown-source-view.mod-cm6 .cm-mark::after {
   position: absolute;
   top: 50%;
   transform: translateY(-50%) scale(0.5);
@@ -1853,106 +1857,129 @@ body.theme-dark .markdown-preview-view a.external-link:hover::before {
   pointer-events: none
 }
 
-body.theme-dark .markdown-preview-view mark {
-  color: var(--secondary-color);
-  text-shadow: var(--glow-shadow-box)
+body.theme-dark .markdown-preview-view mark,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-mark {
+  color: var(--secondary-color) !important;
+  text-shadow: var(--glow-shadow-box);
+  background-color: transparent !important
 }
 
 body.theme-dark .markdown-preview-view mark::before,
-body.theme-dark .markdown-preview-view mark::after {
+body.theme-dark .markdown-preview-view mark::after,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-mark::before,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-mark::after {
   content: none !important
 }
 
-body.theme-dark .markdown-preview-view mark:hover {
-  color: #fff;
-  background-color: rgba(255, 85, 85, 0.2);
+body.theme-dark .markdown-preview-view mark:hover,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-mark:hover {
+  color: #fff !important;
+  background-color: rgba(255, 85, 85, 0.2) !important;
   transform: scale(1.05);
   text-shadow: 0 0 1px #fff, 0 0 5px #fff, 0 0 15px var(--primary-color), 0 0 30px var(--primary-color);
-  box-shadow: 0 0 15px rgba(255, 85, 85, 0.3)
+  box-shadow: 0 0 15px rgba(255, 85, 85, 0.3);
+  z-index: 1
 }
 
-body.theme-light .markdown-preview-view mark {
-  background-color: color-mix(in srgb, var(--primary-color), transparent 88%);
-  color: var(--text-normal);
+body.theme-light .markdown-preview-view mark,
+body.theme-light .markdown-source-view.mod-cm6 .cm-mark {
+  background-color: color-mix(in srgb, var(--primary-color), transparent 88%) !important;
+  color: var(--text-normal) !important;
   text-shadow: none
 }
 
-body.theme-light .markdown-preview-view mark::before {
+body.theme-light .markdown-preview-view mark::before,
+body.theme-light .markdown-source-view.mod-cm6 .cm-mark::before {
   content:"{";
   left: -10px;
   color: var(--primary-color)
 }
 
-body.theme-light .markdown-preview-view mark::after {
+body.theme-light .markdown-preview-view mark::after,
+body.theme-light .markdown-source-view.mod-cm6 .cm-mark::after {
   content: "}";
   right: -10px;
   color: var(--primary-color)
 }
 
-body.theme-light .markdown-preview-view mark:hover {
-  background-color: color-mix(in srgb, var(--primary-color), transparent 80%);
-  color: var(--primary-color)
+body.theme-light .markdown-preview-view mark:hover,
+body.theme-light .markdown-source-view.mod-cm6 .cm-mark:hover {
+  background-color: color-mix(in srgb, var(--primary-color), transparent 80%) !important;
+  color: var(--primary-color) !important
 }
 
-body.theme-light .markdown-preview-view mark:hover::before {
+body.theme-light .markdown-preview-view mark:hover::before,
+body.theme-light .markdown-source-view.mod-cm6 .cm-mark:hover::before {
   opacity: 1;
   transform: translateY(-52%) scale(1.1);
   left: -6px
 }
 
-body.theme-light .markdown-preview-view mark:hover::after {
+body.theme-light .markdown-preview-view mark:hover::after,
+body.theme-light .markdown-source-view.mod-cm6 .cm-mark:hover::after {
   opacity: 1;
   transform: translateY(-52%) scale(1.1);
   right: -6px
 }
 
-.markdown-preview-view strong {
+.markdown-preview-view strong,
+.markdown-source-view.mod-cm6 .cm-strong {
   font-weight: bold;
   display: inline-block;
-  transition: transform 0.2s cubic-bezier(0.5, 1.5, 0.5, 1)
+  transition: transform 0.2s cubic-bezier(0.5, 1.5, 0.5, 1), color 0.2s ease
 }
 
-body.theme-dark .markdown-preview-view strong {
+body.theme-dark .markdown-preview-view strong,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-strong {
   color: var(--primary-color)
 }
 
-body.theme-dark .markdown-preview-view strong:hover {
+body.theme-dark .markdown-preview-view strong:hover,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-strong:hover {
   transform: translateY(-2px) scale(1.1);
-  text-shadow: 0 0 10px var(--primary-color)
+  text-shadow: 0 0 10px var(--primary-color);
+  z-index: 1
 }
 
-body.theme-light .markdown-preview-view strong {
+body.theme-light .markdown-preview-view strong,
+body.theme-light .markdown-source-view.mod-cm6 .cm-strong {
   color: var(--text-bold)
 }
 
-body.theme-light .markdown-preview-view strong:hover {
+body.theme-light .markdown-preview-view strong:hover,
+body.theme-light .markdown-source-view.mod-cm6 .cm-strong:hover {
   transform: translateY(-2px) scale(1.1);
   text-shadow: none;
-  color: var(--primary-color)
+  color: var(--primary-color) !important
 }
 
-.markdown-preview-view em {
+.markdown-preview-view em,
+.markdown-source-view.mod-cm6 .cm-em {
   font-style: italic;
   padding: 0 2px;
   transition: all 0.3s ease
 }
 
-body.theme-dark .markdown-preview-view em {
+body.theme-dark .markdown-preview-view em,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-em {
   color: var(--secondary-color)
 }
 
-body.theme-dark .markdown-preview-view em:hover {
+body.theme-dark .markdown-preview-view em:hover,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-em:hover {
   color: var(--primary-color);
   text-shadow: var(--glow-shadow-box);
   text-decoration: underline wavy var(--primary-color) !important;
   text-underline-offset: 4px
 }
 
-body.theme-light .markdown-preview-view em {
+body.theme-light .markdown-preview-view em,
+body.theme-light .markdown-source-view.mod-cm6 .cm-em {
   color: var(--secondary-color)
 }
 
-body.theme-light .markdown-preview-view em:hover {
+body.theme-light .markdown-preview-view em:hover,
+body.theme-light .markdown-source-view.mod-cm6 .cm-em:hover {
   color: var(--primary-color);
   text-shadow: none;
   text-decoration: underline wavy var(--primary-color) !important;
@@ -1960,36 +1987,41 @@ body.theme-light .markdown-preview-view em:hover {
 }
 
 .markdown-preview-view s,
-.markdown-preview-view del {
+.markdown-preview-view del,
+.markdown-source-view.mod-cm6 .cm-strikethrough {
   text-decoration: line-through;
   transition: all 0.3s ease
 }
 
 body.theme-dark .markdown-preview-view s,
-body.theme-dark .markdown-preview-view del {
+body.theme-dark .markdown-preview-view del,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-strikethrough {
   text-decoration-color: var(--primary-color);
   color: #888
 }
 
 body.theme-dark .markdown-preview-view s:hover,
-body.theme-dark .markdown-preview-view del:hover {
+body.theme-dark .markdown-preview-view del:hover,
+body.theme-dark .markdown-source-view.mod-cm6 .cm-strikethrough:hover {
   opacity: 1;
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
   text-decoration-color: var(--secondary-color);
   cursor: not-allowed;
   text-shadow: 0 0 8px var(--primary-color)
 }
 
 body.theme-light .markdown-preview-view s,
-body.theme-light .markdown-preview-view del {
+body.theme-light .markdown-preview-view del,
+body.theme-light .markdown-source-view.mod-cm6 .cm-strikethrough {
   text-decoration-color: color-mix(in srgb, var(--primary-color), transparent 40%);
   color: #999
 }
 
 body.theme-light .markdown-preview-view s:hover,
-body.theme-light .markdown-preview-view del:hover {
+body.theme-light .markdown-preview-view del:hover,
+body.theme-light .markdown-source-view.mod-cm6 .cm-strikethrough:hover {
   opacity: 1;
-  color: var(--text-normal);
+  color: var(--text-normal) !important;
   text-decoration-color: #ff5555;
   cursor: not-allowed;
   text-shadow: none
