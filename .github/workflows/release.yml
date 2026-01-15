@@ -1,0 +1,71 @@
+name: Release Obsidian Theme
+
+on:
+  push:
+    tags:
+      - "v*" # 当推送以 'v' 开头的标签时触发 (例如 v1.0.0)
+
+permissions:
+  contents: write # 需要写入权限来创建 Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 检出代码
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. 获取版本号
+      - name: Get version
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      # 3. 准备文件夹结构 (核心修改)
+      # 创建 Phycat 文件夹，把文件复制进去，方便用户解压即用
+      - name: Prepare folder structure
+        run: |
+          mkdir Phycat
+          cp manifest.json theme.css Phycat/
+          # 如果有 README 或 LICENSE 也可以复制进去
+          # cp README.md LICENSE Phycat/ 
+
+      # 4. 打包文件夹为 Zip
+      - name: Zip folder
+        run: |
+          zip -r "obsidian-phycat-theme-${{ env.VERSION }}.zip" Phycat
+
+      # 5. 获取 Commit 信息
+      - name: Get Commit Message
+        id: get_commit_message
+        run: |
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          echo "COMMIT_MSG<<EOF" >> $GITHUB_ENV
+          echo "$COMMIT_MSG" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      # 6. 发布 Release
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ env.VERSION }}
+          name: Release ${{ env.VERSION }}
+          body: |
+            ## 更新内容
+            
+            ${{ env.COMMIT_MSG }}
+            
+            ---
+            ### 📦 如何安装
+            1. 下载 `obsidian-phycat-theme-${{ env.VERSION }}.zip`。
+            2. 解压得到 `Phycat` 文件夹。
+            3. 将文件夹放入你的 `.obsidian/themes/` 目录下。
+            
+            *(自动生成)*
+          files: |
+            manifest.json
+            theme.css
+            obsidian-phycat-theme-${{ env.VERSION }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
