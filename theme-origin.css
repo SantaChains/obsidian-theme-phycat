@@ -71,6 +71,7 @@ body {
   --checkbox-size: 1.25rem;
   --checkmark-color: #ffffff;
   --table-border-radius: 8px;
+  --text-faint: color-mix(in srgb, var(--primary-color), transparent 20%);
   --p-spacing: 10px;
   --line-height-normal: 2rem;
   --h4-size: 1.15rem;
@@ -498,7 +499,6 @@ body.theme-light {
   --background-secondary-alt: color-mix(in srgb, var(--bg-color), #000 8%);
   --text-normal: var(--text-color);
   --text-muted: var(--text-color-secondary);
-  --text-faint: var(--border-color);
   --mermaid-text-color: var(--text-color);
   --text-accent: var(--primary-color);
   --text-accent-hover: var(--link-hover-color);
@@ -1292,9 +1292,9 @@ body.theme-dark {
 
 .markdown-preview-view li::before {
   content: "";
-  height: calc(100% - 62px);
+  height: calc(100% - 3.3rem);
   position: absolute;
-  top: 40px;
+  top: 2.2rem;
   bottom: 0;
   left: -22px;
   border-left: 1px solid var(--primary-color);
@@ -1303,7 +1303,7 @@ body.theme-dark {
 }
 
 .markdown-preview-view ul>li::before {
-  left: -13px
+  left: -0.83rem
 }
 
 .markdown-preview-view>div>ul>li::before,
@@ -1312,8 +1312,8 @@ body.theme-dark {
 }
 
 .markdown-preview-view li.task-list-item::before {
-  left: -20px;
-  height: calc(100% - 57px)
+  left: -0.7rem;
+  height: calc(100% - 3.3rem)
 }
 
 .markdown-rendered.show-indentation-guide li>ul::before,
@@ -2828,7 +2828,12 @@ body {
   --setting-items-background: transparent !important;
   --setting-items-border-width: 0 !important;
   --setting-items-padding: 16px 12px !important;
-  --setting-items-radius: 12px !important
+  --setting-items-radius: 12px !important;
+  --background-modifier-border-focus: color-mix(in srgb, var(--primary-color), transparent 50%)
+}
+
+.community-modal-info {
+  --h2-color: var(--primary-color)
 }
 
 .nav-file-tag {
@@ -2840,10 +2845,8 @@ body {
   border-radius: 16px;
   border: 1px solid var(--border-color);
   box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.4);
-  padding: 0;
+  padding: 20px;
   overflow: hidden;
-  height: 80vh;
-  width: 85vw;
   max-width: 1100px;
   transition: transform 0.2s ease, opacity 0.2s ease
 }
@@ -2894,7 +2897,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
-  margin: 12px 0 4px 10px
+  margin: 2px 0 4px 10px
 }
 
 .vertical-tab-nav-item {
@@ -2969,18 +2972,17 @@ body {
 
 .vertical-tab-content-container {
   flex-grow: 1;
-  background: transparent;
-  overflow-y: auto
+  background: transparent
 }
 
 .vertical-tab-content {
-  padding: 30px 50px 80px 50px;
+  padding: 5px 50px;
   max-width: 900px;
   margin: 0 auto
 }
 
 .setting-item-heading .setting-item-name {
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: 700;
   color: var(--text-normal);
   margin-bottom: 0;
@@ -2989,7 +2991,6 @@ body {
 }
 
 .setting-item-heading {
-  border-bottom: 2px solid var(--background-modifier-border);
   padding-bottom: 10px;
   margin-bottom: 20px;
   margin-top: 40px
@@ -2997,7 +2998,6 @@ body {
 
 .setting-item {
   border-top: none;
-  border-bottom: 1px solid var(--background-modifier-border);
   padding: 16px 0;
   display: flex;
   align-items: center;
@@ -3043,9 +3043,46 @@ body {
   background-color: var(--primary-color)
 }
 
+.community-modal-controls .setting-item {
+  border-bottom: none;
+  padding: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  min-height: unset
+}
+
+.community-modal-controls .setting-item .setting-item-info {
+  flex: 0 0 auto;
+  width: auto;
+  margin-right: 8px;
+  align-self: center;
+  display: block !important
+}
+
+.community-modal-controls .setting-item:has(.search-input-container) {
+  flex-grow: 1;
+  margin-right: 15px
+}
+
+.community-modal-controls .setting-item.mod-toggle {
+  flex-shrink: 0
+}
+
+.community-modal-controls .search-input-container input {
+  height: 30px
+}
+
+.community-modal-controls .setting-item-description {
+  display: none
+}
+
+.mod-community-modal .modal-sidebar button.clickable-icon {
+  padding: 0
+}
+
 .vertical-tab-content>.setting-item:has(.search-input-container) {
   border-top: none;
-  border-bottom: 1px solid var(--background-modifier-border);
   padding-bottom: 20px;
   margin-bottom: 20px
 }
@@ -3085,8 +3122,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px;
-  border-bottom: 1px solid var(--background-modifier-border)
+  padding: 15px
 }
 
 .style-settings-container {
@@ -3107,7 +3143,6 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: var(--setting-items-padding);
-  border-bottom: 1px solid var(--background-modifier-border);
   margin-bottom: 0;
   transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   border-radius: var(--setting-items-radius)
@@ -3115,11 +3150,6 @@ body {
 
 .setting-item:last-child {
   border-bottom: none
-}
-
-.setting-item:hover {
-  border-bottom-color: transparent;
-  transform: scale(1.01)
 }
 
 .setting-item-info {
@@ -3149,10 +3179,148 @@ body {
   flex-shrink: 0
 }
 
-.style-settings-container .setting-item {
-  border-bottom: 1px solid var(--background-modifier-border)
-}
-
 .style-settings-container .setting-item:last-child {
   border-bottom: none
+}
+
+.style-settings-heading[data-level="0"] {
+  margin-bottom: 0
+}
+
+.workspace-leaf-content[data-type="bases"] {
+  --bases-table-row-border-width: 0px !important;
+  --bases-table-column-border-width: 0px !important;
+  --table-border-width: 0px !important;
+  --bases-table-row-height: 40px !important;
+  --bases-table-font-size: 14px !important;
+  --bases-table-header-background: var(--background-primary);
+  --bases-table-group-background: var(--background-primary)
+}
+
+.bases-toolbar {
+  border-bottom: 1px solid var(--border-color);
+  padding: 8px 16px;
+  gap: 12px
+}
+
+.bases-toolbar .text-icon-button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 4px 12px;
+  color: var(--text-muted);
+  font-size: 13px;
+  transition: all 0.2s ease;
+  box-shadow: none !important
+}
+
+.bases-toolbar .text-icon-button:hover,
+.bases-toolbar .text-icon-button.is-active {
+  background-color: var(--background-modifier-hover);
+  color: var(--text-normal)
+}
+
+.bases-toolbar .text-button-icon svg {
+  width: 16px;
+  height: 16px;
+  opacity: 0.8
+}
+
+.bases-thead {
+  background-color: var(--background-primary) !important;
+  border-bottom: 2px solid var(--background-modifier-border);
+  box-shadow: none !important;
+  z-index: 10
+}
+
+.bases-table-header {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-left: 12px
+}
+
+.bases-tr {
+  box-shadow: none !important;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  margin: 0 4px;
+  width: calc(100% - 8px) !important;
+  border-radius: 8px
+}
+
+.bases-tr:hover {
+  background-color: color-mix(in srgb, var(--primary-color), transparent 88%) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05), inset 0 0 0 1px color-mix(in srgb, var(--primary-color), transparent 90%) !important;
+  border-bottom-color: transparent;
+  transform: scale(1.005);
+  z-index: 10
+}
+
+.bases-tr:hover .bases-rendered-value {
+  color: var(--text-normal) !important
+}
+
+.bases-tr:hover .internal-link {
+  color: var(--primary-color) !important;
+  text-decoration: none !important
+}
+
+.bases-tr.is-selected {
+  background-color: color-mix(in srgb, var(--primary-color), transparent 80%) !important;
+  box-shadow: inset 3px 0 0 var(--primary-color)
+}
+
+.bases-tr:hover .bases-td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px
+}
+
+.bases-tr:hover .bases-td:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px
+}
+
+.bases-td {
+  box-shadow: none !important;
+  padding: 0 12px !important;
+  border-right: none !important
+}
+
+.bases-rendered-value {
+  padding: 0 !important;
+  display: flex;
+  align-items: center
+}
+
+.bases-rendered-value .internal-link {
+  text-decoration: none !important;
+  color: var(--text-normal) !important;
+  font-weight: 400;
+  transition: color 0.2s ease
+}
+
+.bases-rendered-value .internal-link:hover {
+  color: var(--primary-color) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px
+}
+
+.bases-table-header-icon {
+  display: none
+}
+
+.bases-view {
+  background-color: var(--background-primary)
+}
+
+.theme-light .bases-tr:not(:hover) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03)
+}
+
+.theme-dark .bases-tr:not(:hover) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03)
 }
