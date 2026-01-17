@@ -3077,10 +3077,6 @@ body {
   display: none
 }
 
-.mod-community-modal .modal-sidebar button.clickable-icon {
-  padding: 0
-}
-
 .vertical-tab-content>.setting-item:has(.search-input-container) {
   border-top: none;
   padding-bottom: 20px;

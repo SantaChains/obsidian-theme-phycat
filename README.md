@@ -8,7 +8,7 @@
 
 > 🎨 **设计理念**：极简的结构，极致的个性。
 
-![Theme Screenshot](screenshot.png)
+![Theme Screenshot](screenshot-hd.png)
 
 ## ✨以此主题的特性
 
@@ -43,7 +43,7 @@
 
 Phycat 针对开源字体 **LXGW WenKai (霞鹜文楷)** 进行了特别优化，这能带来最佳的阅读体验。
 
-1. 从官方发布页下载字体文件 (`LXGWWenKai-Regular.ttf`)： 👉 [**下载链接 (GitHub)**](https://github.com/lxgw/LxgwWenKai/releases/download/v1.521/LXGWWenKai-Regular.ttf)
+1. 从官方发布页下载字体文件 (`LXGWWenKai-Regular.ttf`)： 👉 [**下载链接 (GitHub)**]([Releases · lxgw/LxgwWenKai](https://github.com/lxgw/LxgwWenKai/releases))
 2. 在你的操作系统中安装该字体（双击 `.ttf` 文件 > 安装）。
 3. 重启 Obsidian。
 4. 进入 **设置 (Settings)** > **外观 (Appearance)** > **正文字体 (Text Font)**。
@@ -79,9 +79,9 @@ Phycat 针对开源字体 **LXGW WenKai (霞鹜文楷)** 进行了特别优化�
 
 ## 🍔 捐赠
 
-<img src="wechatpay.png" style="zoom:33%;" /><img src="alipay.png" alt="alipay" style="zoom:33%;" />
+<img src="wechatpay.png" style="width:250px;" /><img src="alipay.png" alt="alipay" style="width:250px;" />
 
-[hr]
+---
 
 *Made with ❤️ by sumruler*
 
@@ -99,7 +99,7 @@ Phycat 针对开源字体 **LXGW WenKai (霞鹜文楷)** 进行了特别优化�
 
 > 🎨 **Design Philosophy**: Minimalist structure with maximum personality.
 
-![Theme Screenshot](screenshot.png)
+![Theme Screenshot-hd](screenshot.png)
 
 ---
 
@@ -134,7 +134,7 @@ This theme relies on the **Style Settings** plugin for color customization.
 ### 3. Install Recommended Font (Crucial!)
 Phycat is optimized for the open-source font **LXGW WenKai (霞鹜文楷)**.
 1. Download the font file (`LXGWWenKai-Regular.ttf`) from the official release:
-   👉 **[Download Link (GitHub)](https://github.com/lxgw/LxgwWenKai/releases/download/v1.521/LXGWWenKai-Regular.ttf)**
+   👉 **[Download Link (GitHub)]([Releases · lxgw/LxgwWenKai](https://github.com/lxgw/LxgwWenKai/releases))**
 2. Install the font on your operating system (Double click `.ttf` file > Install).
 3. Restart Obsidian.
 4. Go to **Settings** > **Appearance** > **Text Font**.
@@ -171,7 +171,7 @@ This theme is licensed under the MIT License. See [LICENSE](LICENSE) for more de
 
 ## 🍔Donation
 
-<img src="wechatpay.png" style="zoom:33%;" /><img src="alipay.png" alt="alipay" style="zoom:33%;" />
+<img src="wechatpay.png" style="width:250px;" /><img src="alipay.png" alt="alipay" style="width:250px;" />
 
 ---
 *Made with ❤️ by sumruler*
