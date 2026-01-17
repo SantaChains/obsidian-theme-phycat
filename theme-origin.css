@@ -1064,9 +1064,6 @@ body.theme-dark {
   font-weight: bold;
   line-height: 1.4;
   position: relative;
-  padding-top: 0 !important;
-  margin-top: 1rem !important;
-  margin-bottom: 1rem !important;
   padding-bottom: 0.2em
 }
 
@@ -1075,7 +1072,8 @@ body.theme-dark {
   font-family: var(--font-monospace);
   font-weight: normal;
   font-size: 0.9em;
-  margin-right: 8px
+  margin-right: 8px;
+  opacity: 0.4
 }
 
 .markdown-source-view.mod-cm6 .HyperMD-header-1 {
@@ -1126,9 +1124,8 @@ body.theme-dark {
 .markdown-source-view.mod-cm6 .HyperMD-header-3::before {
   content: "";
   position: absolute;
+  margin-top: 0.3rem;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
   width: 5px;
   height: 18px;
   border-radius: 4px;
@@ -1145,9 +1142,8 @@ body.theme-dark {
 .markdown-source-view.mod-cm6 .HyperMD-header-4::before {
   content: "";
   position: absolute;
+  margin-top: 0.46rem;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -1164,9 +1160,8 @@ body.theme-dark {
 .markdown-source-view.mod-cm6 .HyperMD-header-5::before {
   content: "";
   position: absolute;
+  margin-top: 0.5rem;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -1186,18 +1181,16 @@ body.theme-dark {
   content: "-";
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
   color: var(--primary-color);
   font-weight: bold;
-  line-height: 1;
+  line-height: 1.4;
   font-family: var(--font-monospace);
   pointer-events: none
 }
 
 .markdown-source-view.mod-cm6 .HyperMD-header:hover::before {
-  transform: translateY(-50%) scale(1.2);
-  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1)
+  opacity: 1;
+  border-color: var(--primary-color)
 }
 
 .markdown-source-view.mod-cm6 .HyperMD-header-3::after,
@@ -3075,6 +3068,10 @@ body {
 
 .community-modal-controls .setting-item-description {
   display: none
+}
+
+.mod-community-modal .modal-sidebar button.clickable-icon {
+  padding: 0
 }
 
 .vertical-tab-content>.setting-item:has(.search-input-container) {

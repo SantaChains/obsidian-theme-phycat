@@ -61,6 +61,9 @@ jobs:
             1. 下载 `obsidian-phycat-theme-${{ env.VERSION }}.zip`。
             2. 解压得到 `Phycat` 文件夹。
             3. 将文件夹放入你的 `.obsidian/themes/` 目录下。
+            4. 下载安装字体文件 (`LXGWWenKai-Regular.ttf`)： 👉 [**下载链接 (GitHub)**]([Releases · lxgw/LxgwWenKai](https://github.com/lxgw/LxgwWenKai/releases))。
+            5. 启用主题，设置字体`霞骛文楷`。
+            6. 在Style setting插件中（若没有请安装）选择你喜欢的配色。
           files: |
             manifest.json
             theme.css
